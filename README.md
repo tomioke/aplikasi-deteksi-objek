@@ -49,7 +49,18 @@ python-3.8.8
 3. Isi skrip Procfile khusus Django berisi seperti berikut:
 web: gunicorn "<nama_project>".wsgi --log-file -
 
-4. Upload projek ke github, misalkan url projek
+4. Upload projek ke github, misalkan url projek https://github.com/tomioke/aplikasi-deteksi-objek.git
+
+5. Masuk dan login heroku, setelah masuk ke waebsitenya pilih New pada pojok kanan atas, pilih create new app
+
+6. Berikan judul aplikasinya misal deteksi-objek, biarkan saja country seperti itu lalu create apps
+
+7. Hubungkan deployment ke github, login dan berikan akses lalu scroll bawah cari nama repositori misal aplikasi-deteksi-objek lalu klik connet, tunggu sebentar.
+
+8. Jika sudah scrol ke bawah aktifkan automatic deploy, tidak usah di cetang, lalu kebawah pilih deploy branch, Tunggu sampai proses selesai.
+
+9. Apabila sudah selesai bisa pilih Open apps lalu diarahkan ke halaman kita
+
 
 
 
