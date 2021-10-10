@@ -38,13 +38,14 @@ dan hubungkan pada folder objectDetection.
 
 1. Isi skrip requirements.txt sesuaikan dengan library yang di pakai pada projek misalkan seperti ini:
 Django==1.11.17
-django-heroku
-gunicorn
-keras
-tensorflow
+gunicorn==19.7.1
+keras==2.6.0
+tensorflow-gpu==1.15 # Ukuran file 486 mb :)
+django_heroku
+whitenoise
 
 2. Isi skrip runtime.txt sesuaikan dengan versi python yang dipakai.
-python-3.8.8
+python-3.7.12
 
 3. Isi skrip Procfile khusus Django berisi seperti berikut:
 web: gunicorn "<nama_project>".wsgi --log-file -
@@ -61,6 +62,8 @@ web: gunicorn "<nama_project>".wsgi --log-file -
 
 9. Apabila sudah selesai bisa pilih Open apps lalu diarahkan ke halaman kita
 
+<!-- Membuat backend dengan keras -->
+1. Buka website https://keras.io/api/applications/, lalu pilih salah satu model. Disini untuk contoh akan menggunakan Resnet50 model.
 
 
 
