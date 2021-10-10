@@ -25,7 +25,11 @@ SECRET_KEY = '0o2(em_o$qbgel)w^=*ghdz694x51=qbhhx-0@zed_pu@od+o9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '0.0.0.0',
+    'https://deteksi-objek.herokuapp.com/', # url yang bermasalah
+    '127.0.0.1',
+]
 
 
 # Application definition
