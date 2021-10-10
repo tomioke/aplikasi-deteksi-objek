@@ -26,8 +26,12 @@ SECRET_KEY = '0o2(em_o$qbgel)w^=*ghdz694x51=qbhhx-0@zed_pu@od+o9'
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    '*',
     '0.0.0.0',
+    'http://deteksi-objek.herokuapp.com/',
     'https://deteksi-objek.herokuapp.com/', # url yang bermasalah
+    'deteksi-objek.herokuapp.com',
+    'deteksi-objek.herokuapp.com/',
     '127.0.0.1',
 ]
 
