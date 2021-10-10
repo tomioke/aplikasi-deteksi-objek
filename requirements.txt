@@ -1,6 +1,6 @@
 Django==1.11.17
 gunicorn==19.7.1
 keras==2.6.0
-tensorflow==2.6.0
+tensorflow-gpu==1.15
 django_heroku
 whitenoise
