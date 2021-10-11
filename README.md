@@ -65,6 +65,57 @@ web: gunicorn "<nama_project>".wsgi --log-file -
 <!-- Membuat backend dengan keras -->
 1. Buka website https://keras.io/api/applications/, lalu pilih salah satu model. Disini untuk contoh akan menggunakan Resnet50 model.
 
+2. Buka link google colab berikut : https://colab.research.google.com/drive/13PVFvWJjDzMT5kMsVyiv9yFc3E52l1Ln
+
+<!-- Buat form upload gambar -->
+1. Masuk ke bagian folder templates dan pilih home.html dan masukkan skrip berikut di bawah tag 'h1'
+
+2. Kembali ke folder imgUpload masuk ke urls.py tambahkan skrip dibawah views. home untuk memberikan perintah upload gambar:
+{
+    url(r'imageprocess', views.imageprocess, name='imageprocess'),
+}
+
+3. Masuk ke folder objectDetection pada urls.py pada bagian urlpatterns pada bagian url ubah 'imgUpload' menjadi 'imgupload'
+
+4. Lalu masuk lagi ke folder templates dan masukkan skrip pada home.html pada bagian form action:
+{
+    form action="imgupload/imageprocess"
+}
+
+5. Masuk ke folder imgUpload dan pilih views.py dan buat skrip baru di bawah def home seperti ini:
+{
+    def imageprocess(request):
+    return render(request, 'result.html')
+}
+
+6. Buat file baru pada folder templates dan tulis result.html untuk membuat views hasil proses gambar
+
+7. Masuk ke folder objectDetection pada urls.py pada bagian urlpatterns pada bagian url ubah 'imgUpload' menjadi 'imgupload'
+
+8. Coba cek dengan mengetikan command python manage.py runserver
+
+9. Jika testing berhasil, lanjut buat fungsi baru pada folder imgUpload/views.py dibawahnya dengan nama 'handle_upload_file' untuk menyimpan proses training
+
+10. Buat file baru dengan nama forms.py pada folder imgUpload dan tuliskan skrip seperti ini:
+{
+    from django import  forms
+
+class ImageUpoadForm(forms.Form):
+    image = forms.ImageField()
+
+}
+
+11. Pada views.py masih di folder yang sama tambahkan skrip berikut di dalam fungsi imageprocess diatas return render:
+{
+    from .forms import ImageUpoadForm # Tambahkan dibawahnya import render
+
+    form = imageUploadForm(request.POST, request.FILES)
+    if form.is_valid:
+        handle_upload_file(request.FILES['image'])
+} 
+
+12. Test kembali dan pastikan tidak terjadi error
+
 
 
 
