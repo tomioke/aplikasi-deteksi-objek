@@ -116,6 +116,27 @@ class ImageUpoadForm(forms.Form):
 
 12. Test kembali dan pastikan tidak terjadi error
 
+13. Masih dalam folder imgupload pada bagian views.py import data dari test dari jupyter notebook lalu pada fungsinya masukkan di bagian fungsi imageprocess
+
+14. Dalam testing dengan run server data masih belum nampak, sekarang edit bagian result.html pada folder templates dan tambahkan : dibawah result page
+{
+    <h1>PREDICTION</h1>
+
+{% for r,p in res %}
+    {{r}} {{p}}%<br/>
+{% endfor %}
+}
+
+15. Masuk ke view.py pada folder imgupload dan lengkapi skrip ini dibawah print predicted:
+{
+    html = decode_predictions(preds, top=3)[0]
+        res = []
+        for e in html:
+            res.append((e[1], np.round(e[2]*100,2)))
+        return render(request, 'result.html', {'res': res})
+    return render(request, 'result.html')
+}
+
 
 
 

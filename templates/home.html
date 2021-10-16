@@ -9,7 +9,7 @@
 <body>
     <h1>This is my Pages</h1>
 <!--- -->
-    <form action="imgupload/imageprocess" method="POST" enctype="multipart/form-data">
+    <form action="upload/imageprocess" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <input id="image" type="file" name="image"/> <!--- Input gambar -->
     <input type="submit" value="Submit"/> <!--- Tombol upload gambar -->
